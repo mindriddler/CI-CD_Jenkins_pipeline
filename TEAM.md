@@ -7,3 +7,5 @@
 - [Martin Alfredson](https://github.com/maal2202)
 
 - [Gustav Öberg](https://github.com/gurraoberg)
+
+- [Saman Petfat](https://github.com/samanpetfat)
