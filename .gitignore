@@ -1,3 +1,4 @@
 # A way to easily ignore files
 ignored-*
 venv
+.venv
