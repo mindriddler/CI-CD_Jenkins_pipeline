@@ -49,5 +49,5 @@ def send_ping_persist_data(url_id: int):
     try:
         watched_url = persistance.get_watched_url(url_id)
         persistance.add_ping_data(send_ping(watched_url))
-    except persistance.WatchedUrlNotFoundError:
+    except WatchedUrlNotFoundError:
         pass
