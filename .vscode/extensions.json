@@ -3,6 +3,7 @@
         "ms-python.vscode-pylance",
         "ms-python.python",
         "ms-python.black-formatter",
-        "ms-python.pylint"
+        "ms-python.pylint",
+        "ms-python.isort"
     ]
 }

@@ -1,11 +1,10 @@
 from datetime import datetime
-from flask import request, jsonify
-from werkzeug.exceptions import BadRequest
-from pingurl import app
-from pingurl.models import WatchedUrl
+
 import validators
-from pingurl import persistance
-from pingurl import business
+from flask import jsonify, request
+from pingurl import app, business, persistance
+from pingurl.models import WatchedUrl
+from werkzeug.exceptions import BadRequest
 
 MIN_PERIOD = 10
 

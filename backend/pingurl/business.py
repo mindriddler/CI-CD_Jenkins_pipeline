@@ -1,6 +1,5 @@
-from pingurl import schedule
+from pingurl import persistance, schedule
 from pingurl.models import WatchedUrl
-from pingurl import persistance
 from pingurl.ping import send_ping
 
 

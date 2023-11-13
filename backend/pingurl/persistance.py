@@ -1,4 +1,4 @@
-from pingurl.models import WatchedUrl, PingData
+from pingurl.models import PingData, WatchedUrl
 
 watched_urls = {}
 pings = {}

@@ -1,9 +1,10 @@
+from datetime import datetime
 from email.utils import parsedate_to_datetime
+
+import requests
 from pingurl import persistance
 from pingurl.models import PingData, WatchedUrl
 from pingurl.persistance import WatchedUrlNotFoundError
-from datetime import datetime
-import requests
 
 TIMEOUT = 10
 

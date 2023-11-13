@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta, timezone
+
+from pingurl import scheduler as apscheduler
 from pingurl.ping import send_ping_persist_data
 from pingurl.watched_urls import WatchedUrl
-from pingurl import scheduler as apscheduler
 
 jobs = {}
 
