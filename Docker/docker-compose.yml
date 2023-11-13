@@ -2,13 +2,12 @@ version: '3.11'
 services:
   jenkins:
     image: jenkins/jenkins:jdk17
-    privileged: true
-    user: root
+    user: "1000:1000"
     ports:      
       - 8080:8080
       - 50000:50000
     volumes:
-      - ../jenkins-data:/var/jenkins_home
+      - ../jenkins-data:/var/jenkins_home:rw
 
   backend:
     build:
