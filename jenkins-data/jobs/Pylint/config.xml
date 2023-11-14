@@ -44,7 +44,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd backend &amp;&amp; source venv/bin/activate &amp;&amp; pylint pingurl/</command>
+      <command>source ../venv/backend/venv/bin/activate &amp;&amp; cd backend &amp;&amp; pylint --fail-under 8 pingurl/</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>

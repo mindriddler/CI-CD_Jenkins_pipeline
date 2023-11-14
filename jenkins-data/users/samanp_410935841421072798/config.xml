@@ -3,6 +3,7 @@
   <version>10</version>
   <id>saman.p</id>
   <fullName>saman.p</fullName>
+  <description></description>
   <properties>
     <jenkins.security.ApiTokenProperty>
       <tokenStore>
@@ -12,10 +13,14 @@
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1309.v8835d63eb_d8a_">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@463.vedf8358e006b_">
+      <emailAddress>saman.p@hotmail.se</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.102">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.model.MyViewsProperty>
+      <primaryViewName></primaryViewName>
       <views>
         <hudson.model.AllView>
           <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
@@ -32,18 +37,20 @@
     <hudson.model.PaneStatusProperties>
       <collapsed/>
     </hudson.model.PaneStatusProperties>
+    <hudson.security.HudsonPrivateSecurityRealm_-Details>
+      <passwordHash>#jbcrypt:$2a$10$ragv.YvSRRFp0mDwXRacoeyh0niCGYOLnba/BrsMrJ.LJi4XxWIuS</passwordHash>
+    </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <jenkins.security.seed.UserSeedProperty>
-      <seed>194ac8027003b472</seed>
+      <seed>0ac96db8e4f5c159</seed>
     </jenkins.security.seed.UserSeedProperty>
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>true</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.model.TimeZoneProperty/>
+    <hudson.model.TimeZoneProperty>
+      <timeZoneName></timeZoneName>
+    </hudson.model.TimeZoneProperty>
     <jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
       <flags/>
     </jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@463.vedf8358e006b_">
-      <emailAddress>saman.p@hotmail.se</emailAddress>
-    </hudson.tasks.Mailer_-UserProperty>
   </properties>
 </user>
