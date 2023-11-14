@@ -3,6 +3,7 @@
   <version>10</version>
   <id>martin.alfredson</id>
   <fullName>martin.alfredson</fullName>
+  <description></description>
   <properties>
     <jenkins.security.ApiTokenProperty>
       <tokenStore>
@@ -12,10 +13,14 @@
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@1309.v8835d63eb_d8a_">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@463.vedf8358e006b_">
+      <emailAddress>martin.alfredson@hotmail.com</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.102">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.model.MyViewsProperty>
+      <primaryViewName></primaryViewName>
       <views>
         <hudson.model.AllView>
           <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
@@ -32,18 +37,26 @@
     <hudson.model.PaneStatusProperties>
       <collapsed/>
     </hudson.model.PaneStatusProperties>
+    <hudson.security.HudsonPrivateSecurityRealm_-Details>
+      <passwordHash>#jbcrypt:$2a$10$aXGwRbeOS00SEUqz3ztT1uXGkJuitrv.id.R2fzjVY0BcFNx82uNq</passwordHash>
+    </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <jenkins.security.seed.UserSeedProperty>
-      <seed>4d7cc13789991301</seed>
+      <seed>4fe5f8a18b0d1f67</seed>
     </jenkins.security.seed.UserSeedProperty>
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>true</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.model.TimeZoneProperty/>
+    <hudson.model.TimeZoneProperty>
+      <timeZoneName></timeZoneName>
+    </hudson.model.TimeZoneProperty>
     <jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
       <flags/>
     </jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@463.vedf8358e006b_">
-      <emailAddress>martin.alfredson@hotmail.com</emailAddress>
-    </hudson.tasks.Mailer_-UserProperty>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <roles>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1699971591476</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
