@@ -32,7 +32,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>venv</upstreamProjects>
+      <upstreamProjects>Pylint, Pytest</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -44,7 +44,12 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd backend &amp;&amp; source venv/bin/activate &amp;&amp; pylint pingurl/</command>
+      <command>docker build -t api -f Docker/Dockerfile.backend .
+</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>docker run -d -p 5001:5001 api</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
