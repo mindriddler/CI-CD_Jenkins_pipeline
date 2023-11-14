@@ -1,0 +1,14 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.plugins.gradle.injection.InjectionConfig plugin="gradle@2.9">
+  <enabled>false</enabled>
+  <allowUntrusted>false</allowUntrusted>
+  <injectMavenExtension>false</injectMavenExtension>
+  <injectCcudExtension>false</injectCcudExtension>
+  <enforceUrl>false</enforceUrl>
+  <checkForBuildAgentErrors>false</checkForBuildAgentErrors>
+  <parsedVcsRepositoryFilter>
+    <vcsRepositoryFilter></vcsRepositoryFilter>
+    <inclusion class="empty-list"/>
+    <exclusion class="empty-list"/>
+  </parsedVcsRepositoryFilter>
+</hudson.plugins.gradle.injection.InjectionConfig>
