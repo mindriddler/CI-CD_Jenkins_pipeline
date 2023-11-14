@@ -5,8 +5,13 @@
       <name>github</name>
       <apiUrl>https://api.github.com</apiUrl>
       <manageHooks>true</manageHooks>
-      <credentialsId>62e09db8-7acd-4433-8ddd-63d27f763e69</credentialsId>
+      <credentialsId>59ada50e-0e40-46fa-a5e4-c93b62a12335</credentialsId>
       <clientCacheSize>20</clientCacheSize>
     </github-server-config>
   </configs>
+  <hookSecretConfigs>
+    <org.jenkinsci.plugins.github.config.HookSecretConfig>
+      <credentialsId>59ada50e-0e40-46fa-a5e4-c93b62a12335</credentialsId>
+    </org.jenkinsci.plugins.github.config.HookSecretConfig>
+  </hookSecretConfigs>
 </github-plugin-configuration>
