@@ -79,7 +79,7 @@
                         docker build -t api -f Docker/Dockerfile.backend .
                         &apos;&apos;&apos;
                     } catch (Exception e) {
-                        currentBuild.result = &apos;FAILURE&apos; // Mark the build as failed
+                        currentBuild.result = &apos;FAILURE!!!!!&apos; // Mark the build as failed
                         error(&quot;Failed to build Docker image: ${e.message}&quot;)
                     }
                 }

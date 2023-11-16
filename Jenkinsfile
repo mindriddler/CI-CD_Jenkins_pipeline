@@ -45,12 +45,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Deploying...'
-                sh '''
-                docker build -t api -f Docker/Dockerfile.backend .
-                '''
+                script {
+                    echo 'Deploying...'
+
+                    try {
+                        sh '''
+                        docker build -t api -f Docker/Dockerfile.backend .
+                        '''
+                    } catch (Exception e) {
+                        currentBuild.result = 'FAILURE!!!!!' // Mark the build as failed
+                        error("Failed to build Docker image: ${e.message}")
+                    }
+                }
             }
         }
-
     }
 }
