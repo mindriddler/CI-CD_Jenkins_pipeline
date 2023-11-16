@@ -62,7 +62,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                echo "Running the script..."
+                echo "Running the script...."
                 sh '''
                 docker run -d -p 5000:5000 api
                 '''
