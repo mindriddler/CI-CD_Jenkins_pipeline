@@ -23,4 +23,4 @@ jobs:
         pip install -r backend/requirements.txt
     - name: Analysing the code with pylint
       run: |
-        pylint backend/pingurl
+        pylint --fail-under 8 backend/pingurl
