@@ -2,6 +2,35 @@
 
 PingURL is a RESTful service designed to monitor and perform periodic checks on specified URLs.
 
+## Pre-commit
+
+We use pre-commits.
+These do the normal kind of checks
+- black
+- ~~pylint~~
+- ~~pytest~~
+- isort
+
+on every commit
+If one of the checks fail then you're not allowed to commit and you have to retry commiting after you have fixed the issues.
+
+to use pre-commit:
+
+1. Make a venv in the root of the project
+
+`python -m venv venv`
+
+2. Install requirements to said venv
+
+`pip install -r backend/requirements.txt`
+
+3. Install pre-commit hook
+
+`pre-commit install`
+- You should see this message: `pre-commit installed at .git/hooks/pre-commit`
+
+4. Now you can make commits as usual, but checks will happen at every commit
+
 ## Backend
 
 ### Requirements
@@ -100,7 +129,7 @@ Example request body:
 #### Get Watched URL Data
 
 - `GET /watched-urls/{urlId}`: Retrieve data for a specific watched URL by its ID.
-  - Status codes: 
+  - Status codes:
     - `200 (OK)`: The data for the watched URL was successfully retrieved.
     - `404 (Not Found)`: No data could be found for the provided URL ID.
   - Returns: A JSON object with the following structure:
