@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo "Running Pytest..."
                 sh '''
-                source ../venv/backend/venv/bin/activate && cd backend && pytest .
+                source ./backend/venv/bin/activate && pytest backend/
                 '''
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo "Running Pylint..."
                 sh '''
-                source ../venv/backend/venv/bin/activate && cd backend && pylint --fail-under 8 pingurl/
+                source ./backend/venv/bin/activate && pylint --fail-under 8 backend/pingurl/
                 '''
             }
         }
