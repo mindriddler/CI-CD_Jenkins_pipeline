@@ -53,7 +53,7 @@ pipeline {
                         docker build -t api -f Docker/Dockerfile.backend .
                         '''
                     } catch (Exception e) {
-                        currentBuild.result = 'FAILURE!!!!!' // Mark the build as failed
+                        currentBuild.result = 'FAILURE!!!!!'
                         error("Failed to build Docker image: ${e.message}")
                     }
                 }
