@@ -1,9 +1,7 @@
 version: '3.11'
 services:
   jenkins:
-    build:
-      context: ..
-      dockerfile: Docker/Dockerfile.jenkins
+    image: ghcr.io/samanpetfat/pingurl:latest
     user: "1000:1000"
     ports:
       - 8080:8080
