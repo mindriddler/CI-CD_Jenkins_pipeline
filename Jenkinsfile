@@ -25,7 +25,7 @@ pipeline {
         
         stage('Run Pytest') {
             steps {
-                echo "Installing dependencies..."
+                echo "Running Pytest..."
                 sh '''
                 source ../venv/backend/venv/bin/activate && cd backend && pytest .
                 '''
@@ -35,7 +35,7 @@ pipeline {
 
         stage('Run Pylint') {
             steps {
-                echo "Running the script..."
+                echo "Running Pylint..."
                 sh '''
                 source ../venv/backend/venv/bin/activate && cd backend && pylint --fail-under 8 pingurl/
                 '''
@@ -46,16 +46,14 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo 'Deploying...'
+                    def containerExists = sh(script: 'docker ps -a | grep api >/dev/null', returnStatus: true) == 0
 
-                    try {
-                        sh '''
-                        docker build -t api -f Docker/Dockerfile.backend .
-                        '''
-                    } catch (Exception e) {
-                        currentBuild.result = 'FAILURE!!!!!'
-                        error("Failed to build Docker image: ${e.message}")
+                    if (containerExists) {
+                        sh 'docker stop api || true'
+                        sh 'docker rm api || true'
                     }
+
+                    sh 'docker build -t api -f Docker/Dockerfile.backend .'
                 }
             }
         }
@@ -64,7 +62,7 @@ pipeline {
             steps {
                 echo "Running the script...."
                 sh '''
-                docker run -d -p 5000:5000 api
+                docker run -d -p 5000:5000 --name api api
                 '''
             }
         }
