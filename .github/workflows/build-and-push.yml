@@ -1,0 +1,42 @@
+name: Release - Build and push image
+
+on:
+  push:
+    branches:
+        - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Login to Github Container Registry
+      uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a #v2.1.0
+      with:
+        registry: ghcr.io
+        username: samanpetfat
+        password: ${{ secrets.SAMANS_TOKEN }}
+
+    - name: Build & Tag Docker Image
+      run: |
+        export DOCKER_BUILDKIT=1
+        docker build --build-arg GITHUB_ACTION=true \
+          --file ./Docker/Dockerfile.jenkins \
+          --tag ghcr.io/samanpetfat/pingurl:latest .
+    - name: Push Docker Image
+      run: |
+        docker image push --all-tags ghcr.io/samanpetfat/pingurl
+
+    - name: Delete all untagged images
+      uses: actions/delete-package-versions@v4
+      with:
+        owner: ${{ github.repository_owner }}
+        package-name: "pingurl"
+        package-type: "container"
+        token: ${{ secrets.SAMANS_TOKEN }}
+        min-versions-to-keep: 1
