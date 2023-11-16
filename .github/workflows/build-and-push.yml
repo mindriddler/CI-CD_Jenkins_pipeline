@@ -35,7 +35,7 @@ jobs:
     - name: Delete all untagged images
       uses: actions/delete-package-versions@v4
       with:
-        owner: ${{ github.repository_owner }}
+        owner: samanpetfat
         package-name: "pingurl"
         package-type: "container"
         token: ${{ secrets.SAMANS_TOKEN }}
