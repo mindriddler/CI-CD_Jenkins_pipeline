@@ -12,11 +12,5 @@ services:
       - ../jenkins-data:/var/jenkins_home:rw
       - /var/run/docker.sock:/var/run/docker.sock
 
-  backend:
-    build:
-      context: ..
-      dockerfile: Docker/Dockerfile.backend
-    ports:
-      - 5000:5000
 volumes:
   jenkins-data:
