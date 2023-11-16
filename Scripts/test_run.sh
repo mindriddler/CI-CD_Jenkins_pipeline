@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd ../backend
+python3 -m venv ../venv
 
-source venv/bin/activate
+source ../venv/bin/activate
 
-pip install -r requirements.txt --quiet
+pip install -r ../backend/requirements.txt --quiet
 
-pylint --fail-under 8 pingurl/ 
+pylint --fail-under 8 ../backend/pingurl/ 
 
-pytest .
+pytest ../backend/
