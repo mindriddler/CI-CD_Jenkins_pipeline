@@ -6,6 +6,7 @@ PingURL is a RESTful service designed to monitor and perform periodic checks on 
 
 We use pre-commits.
 These do the normal kind of checks
+
 - black
 - ~~pylint~~
 - ~~pytest~~
@@ -27,6 +28,7 @@ to use pre-commit:
 3. Install pre-commit hook
 
 `pre-commit install`
+
 - You should see this message: `pre-commit installed at .git/hooks/pre-commit`
 
 4. Now you can make commits as usual, but checks will happen at every commit
@@ -103,7 +105,7 @@ The application should now be running and accessible at `http://127.0.0.1:5000/`
 
 The following endpoints are available for interacting with the PingURL service:
 
-#### Add a Watched URL
+### Add a Watched URL
 
 - `POST /watched-urls`: Add a new URL to be watched.
   - Payload: JSON object containing `activateAt` (ISO 8601 date-time string), `force` (boolean), `periodSec` (integer, minimum 10), and `url` (valid URL string).
@@ -111,6 +113,7 @@ The following endpoints are available for interacting with the PingURL service:
   - Status codes: 201 (Created), 400 (Bad Request).
 
 Example request body:
+
 ```json
 {
   "activateAt": "2023-11-06T01:36:28.610Z",
@@ -144,6 +147,7 @@ Example request body:
     - `urlId`: The unique identifier for the watched URL.
 
 Example request response:
+
 ```json
 {
     "activateAt": "2023-11-06T02:35:05.923000+00:00",
@@ -175,6 +179,7 @@ Example request response:
     - `urlIds`: An array consisting of integer IDs, each uniquely identifying a watched URL.
 
 Example request response:
+
 ```json
 {
     "urlIds": [1, 2]
@@ -193,6 +198,7 @@ This example shows that there are two URLs being monitored, with the IDs 1 and 2
     - `watchedUrls`: The number of unique URLs that are currently being monitored.
 
 Example request response:
+
 ```json
 {
     "pings": 12,
