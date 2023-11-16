@@ -3,23 +3,16 @@
 version: 2
 updates:
 
-  # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
     directory: "/"
     schedule:
       interval: "daily"
-      # Check for GitHub Actions.
-      time: "08:45"
-      # Use Sweden Standard Time (UTC +01:00)
+      time: "09:00"
       timezone: "Europe/Stockholm"
-
-  # Maintain dependencies for pip.
+  
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
-      # Check for pip updates.
-      time: "08:45"
-      # Use Sweden Standard Time (UTC +01:00)
+      time: "09:00"
       timezone: "Europe/Stockholm"
