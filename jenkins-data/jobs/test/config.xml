@@ -71,13 +71,20 @@
 
         stage(&apos;Build&apos;) {
             steps {
-                echo &apos;Deploying...&apos;
-                sh &apos;&apos;&apos;
-                docker build -t api -f Docker/Dockerfile.backend .
-                &apos;&apos;&apos;
+                script {
+                    echo &apos;Deploying...&apos;
+
+                    try {
+                        sh &apos;&apos;&apos;
+                        docker build -t api -f Docker/Dockerfile.backend .
+                        &apos;&apos;&apos;
+                    } catch (Exception e) {
+                        currentBuild.result = &apos;FAILURE&apos; // Mark the build as failed
+                        error(&quot;Failed to build Docker image: ${e.message}&quot;)
+                    }
+                }
             }
         }
-
     }
 }</script>
     <sandbox>true</sandbox>
