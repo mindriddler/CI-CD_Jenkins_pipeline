@@ -22,26 +22,6 @@ pipeline {
                 '''
             }
         }
-        
-        stage('Run Pytest') {
-            steps {
-                echo "Running Pytest..."
-                sh '''
-                source ./backend/venv/bin/activate && pytest backend/
-                '''
-            }
-        }
-
-
-        stage('Run Pylint') {
-            steps {
-                echo "Running Pylint..."
-                sh '''
-                source ./backend/venv/bin/activate && pylint --fail-under 8 backend/pingurl/
-                '''
-            }
-        }
-
 
         stage('Build') {
             steps {
@@ -63,6 +43,23 @@ pipeline {
                 echo "Running the script...."
                 sh '''
                 docker run -d -p 5000:5000 --name api api
+                '''
+            }
+        }       
+        stage('Run Pytest') {
+            steps {
+                echo "Running Pytest..."
+                sh '''
+                source ./backend/venv/bin/activate && pytest backend/
+                '''
+            }
+        }
+
+        stage('Run Pylint') {
+            steps {
+                echo "Running Pylint..."
+                sh '''
+                source ./backend/venv/bin/activate && pylint --fail-under 8 backend/pingurl/ --rcfile=backend/pyproject.toml
                 '''
             }
         }
