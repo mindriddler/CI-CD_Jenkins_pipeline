@@ -2,6 +2,8 @@ version: '3.11'
 services:
   jenkins:
     image: ghcr.io/samanpetfat/pingurl:latest
+    environment:
+      - HOST_IP=${HOST_IP}
     user: "1000:1000"
     ports:
       - 8080:8080

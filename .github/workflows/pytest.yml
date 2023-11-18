@@ -26,9 +26,13 @@ jobs:
       run: |
         docker build -t pingurl_backend -f Docker/Dockerfile.backend .
 
+    - name: Get host ip
+      run: |
+        echo "HOST_IP=$(ip addr show | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}' | cut -d/ -f1 | head -n 1)" >> $GITHUB_ENV
+
     - name: Run docker container
       run: |
-        docker run -d -p 5000:5000 pingurl_backend
+        docker run -d -p 5000:5000 -e HOST_IP=$HOST_IP pingurl_backend
 
     - name: Analysing the code with pytest
       run: |
