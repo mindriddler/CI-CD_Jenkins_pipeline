@@ -3,12 +3,14 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+      "source.organizeImports": true
     },
   },
   "isort.args": [
     "--profile",
-    "black"
+    "black",
+    "--skip",
+    "watched_urls.py"
   ],
   "python.testing.pytestArgs": [
     "backend"

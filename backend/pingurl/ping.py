@@ -4,7 +4,6 @@ from email.utils import parsedate_to_datetime
 import requests
 from pingurl import persistance
 from pingurl.models import PingData, WatchedUrl
-from pingurl.persistance import WatchedUrlNotFoundError
 
 TIMEOUT = 10
 

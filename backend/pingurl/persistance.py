@@ -5,7 +5,7 @@ pings = {}
 next_id = 0
 
 
-def add_watched_url(watched_url: WatchedUrl): #hej alleammans HELLO
+def add_watched_url(watched_url: WatchedUrl):
     if not isinstance(watched_url, WatchedUrl):
         raise ValueError("watched_url must be a WatchedUrl instance")
 
