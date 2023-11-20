@@ -5,6 +5,7 @@ error_exit() {
 	exit 1
 }
 
+
 get_host_ip() {
 	if [[ ${OSTYPE} == "darwin"* ]]; then
 		# Mac OSX
@@ -30,6 +31,7 @@ get_host_ip() {
 	export HOST_IP
 }
 
+
 change_ownership() {
 	if id -u 1000 >/dev/null 2>&1; then
 		USER_EXISTS=true
@@ -50,6 +52,7 @@ change_ownership() {
 	fi
 }
 
+
 set_permissions() {
 	if [[ -e /var/run/docker.sock ]]; then
 		chmod 666 /var/run/docker.sock || error_exit "Failed to set permissions on /var/run/docker.sock"
@@ -57,6 +60,18 @@ set_permissions() {
 		echo "/var/run/docker.sock does not exist. Skipping permission change."
 	fi
 }
+
+
+create_network() {
+	docker network ls | grep jenkins >/dev/null || true
+	if [[ $? -eq 1 ]]; then
+		echo "Creating jenkins network"
+		docker network create jenkins
+	else
+		echo "Network already exists"
+	fi
+}
+
 
 start_docker() {
 	if [[ -d ../Docker ]]; then
@@ -73,6 +88,7 @@ start_docker() {
 	fi
 }
 
+
 restart_jenkins() {
 	echo "Sleeping for 15 seconds to allow services to stabilize then restarting the jenkins container"
 	for i in {15..1}; do
@@ -83,10 +99,12 @@ restart_jenkins() {
 	docker restart docker-jenkins-1 || error_exit "Failed to restart docker-jenkins-1 container"
 }
 
+
 main() {
 	get_host_ip
 	change_ownership
 	set_permissions
+	create_network
 	start_docker
 	restart_jenkins
 }
