@@ -4,7 +4,14 @@ services:
     image: ghcr.io/samanpetfat/pingurl:latest
     environment:
       - HOST_IP=${HOST_IP}
+      # The following steps needs testing
+      #- DOCKER_HOST=tcp://docker:2376 # To connect to the docker daemon inside the container
+      #- DOCKER_CERT_PATH=/certs/client # Certs
+      #- DOCKER_TLS_VERIFY=1 # TLS verify
+
     user: "1000:1000"
+    networks:
+      - jenkins
     ports:
       - 8080:8080
       - 50000:50000
@@ -14,3 +21,7 @@ services:
 
 volumes:
   jenkins-data:
+
+networks:
+  jenkins:
+    driver: bridge
