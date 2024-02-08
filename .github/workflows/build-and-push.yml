@@ -33,7 +33,7 @@ jobs:
         docker image push --all-tags ghcr.io/samanpetfat/pingurl
 
     - name: Delete all untagged images
-      uses: actions/delete-package-versions@v4
+      uses: actions/delete-package-versions@v5
       with:
         owner: samanpetfat
         package-name: "pingurl"
