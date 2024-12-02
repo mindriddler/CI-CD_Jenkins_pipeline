@@ -11,7 +11,7 @@ Jinja2==3.1.4
 MarkupSafe==3.0.2
 pre-commit==4.0.1
 pylint==3.3.1
-pytest==8.3.3
+pytest==8.3.4
 pytz==2024.2
 requests==2.32.3
 six==1.16.0
