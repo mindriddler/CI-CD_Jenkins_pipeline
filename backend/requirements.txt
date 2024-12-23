@@ -7,7 +7,7 @@ Flask==3.1.0
 idna==3.10
 itsdangerous==2.2.0
 isort==5.13.2
-Jinja2==3.1.4
+Jinja2==3.1.5
 MarkupSafe==3.0.2
 pre-commit==4.0.1
 pylint==3.3.2
