@@ -12,7 +12,7 @@ MarkupSafe==3.0.2
 pre-commit==4.2.0
 pylint==3.3.6
 pytest==8.3.5
-pytz==2024.2
+pytz==2025.2
 requests==2.32.3
 six==1.17.0
 tzlocal==5.3
