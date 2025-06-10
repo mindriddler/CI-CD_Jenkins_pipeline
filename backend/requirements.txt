@@ -13,7 +13,7 @@ pre-commit==4.2.0
 pylint==3.3.7
 pytest==8.4.0
 pytz==2025.2
-requests==2.32.3
+requests==2.32.4
 six==1.17.0
 tzlocal==5.3
 urllib3==2.4.0
