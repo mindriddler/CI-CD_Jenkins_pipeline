@@ -6,7 +6,7 @@ click==8.3.0
 Flask==3.1.2
 idna==3.11
 itsdangerous==2.2.0
-isort==6.1.0
+isort==7.0.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
 pre-commit==4.4.0
