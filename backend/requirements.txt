@@ -9,7 +9,7 @@ itsdangerous==2.2.0
 isort==6.1.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
-pre-commit==4.5.0
+pre-commit==4.5.1
 pylint==3.3.9
 pytest==8.4.2
 pytz==2025.2
